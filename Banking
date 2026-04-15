@@ -1,0 +1,26 @@
+# Banking-[10/04, 7:26 am] ✨SHANMU🦋: import mongoose from "mongoose";
+
+const BillSchema = new mongoose.Schema({
+  id: { type: String, required: true, unique: true },
+  userId: { type: String, required: true },
+  name: { type: String, required: true },
+  provider: { type: String, required: true },
+  amount: { type: Number, required: true },
+  dueDate: { type: String, required: true },
+  status: { type: String, required: true, enum: ["pending", "paid"] }
+});
+
+export default mongoose.model("Bill", BillSchema);
+[10/04, 7:26 am] ✨SHANMU🦋: import mongoose from "mongoose";
+
+const CardSchema = new mongoose.Schema({
+  id: { type: String, required: true, unique: true },
+  userId: { type: String, required: true },
+  type: { type: String, required: true },
+  number: { type: String, required: true },
+  expiry: { type: String, required: true },
+  limit: { type: Number },
+  color: { type: String, required: true }
+});
+
+export default mongoose.model("Card", CardSchema);
